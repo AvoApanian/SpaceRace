@@ -172,7 +172,7 @@ const slides: SlideData[] = [
   },
   {
     id: 17,
-    title: 'Conclusion (suite)',
+    title: 'Conclusion ',
     content: <p>Progressivement, cependant, l’espace est devenu un terrain de coopération, comme le montre la mission Apollo‑Soyouz puis la création de la Station spatiale internationale, annonçant une conquête spatiale plus partagée à l’échelle de l’humanité. Aujourd’hui encore, l’espace demeure un enjeu stratégique et scientifique majeur, où se mêlent rivalités, innovations et projets communs entre nations et acteurs privés.</p>,
   },
 ]
