@@ -15,7 +15,6 @@
   position: relative;
 }
 
-/* Arrière-plan étoilé */
 .stars-background {
   position: fixed;
   top: 0;
@@ -58,7 +57,6 @@
   }
 }
 
-/* Planètes */
 .planet {
   position: fixed;
   border-radius: 50%;
@@ -90,7 +88,6 @@
   50% { transform: translateY(-30px) rotate(180deg); }
 }
 
-/* Navigation supérieure */
 .top-nav {
   position: fixed;
   top: 20px;
@@ -134,7 +131,6 @@
   transform: translateY(0);
 }
 
-/* Indicateurs de slides */
 .slide-indicators {
   position: fixed;
   right: 30px;
@@ -168,7 +164,6 @@
   transform: scale(1.4);
 }
 
-/* Slides */
 .slides-container {
   position: relative;
   z-index: 1;
@@ -260,7 +255,6 @@
   to { opacity: 1; }
 }
 
-/* Typographie */
 p {
   font-size: 1.15rem;
   line-height: 1.8;
@@ -291,7 +285,6 @@ p {
   text-shadow: 0 0 15px rgba(129, 199, 132, 0.4);
 }
 
-/* Timeline */
 .timeline {
   margin: 30px 0;
 }
@@ -356,7 +349,6 @@ p {
   margin: 25px 0;
 }
 
-/* Cards */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -411,7 +403,6 @@ p {
   font-size: 1rem;
 }
 
-/* Textes spéciaux */
 .highlight-text {
   background: linear-gradient(135deg, rgba(129, 199, 132, 0.1) 0%, rgba(100, 181, 246, 0.1) 100%);
   padding: 20px;
@@ -470,7 +461,6 @@ p {
   border: 2px solid rgba(100, 181, 246, 0.3);
 }
 
-/* Navigation inférieure */
 .bottom-nav {
   position: fixed;
   bottom: 30px;
@@ -524,7 +514,6 @@ p {
   text-align: center;
 }
 
-/* === Fix mobile glitch === */
 @media (max-width: 768px) {
 
   .space-conquest-app {
@@ -575,13 +564,6 @@ p {
   }
 }
 
-/* amélioration perf mobile */
-.space-conquest-app, .slides-container, .slide, .planet {
-  will-change: transform;
-  backface-visibility: hidden;
-}
-
-
 .space-conquest-app {
   min-height: 100vh;
   background: #000;
@@ -590,9 +572,15 @@ p {
   overflow-x: hidden;
   position: relative;
 
-  animation: floatApp 15s ease-in-out infinite alternate;
+  /* desktop animation */
+  animation: floatApp 15s ease-in-out infinite alternate,
+             zoomRotate 60s linear infinite;
+
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
+/* Desktop float */
 @keyframes floatApp {
   0%   { transform: translate(0px, 0px) rotate(0deg); }
   25%  { transform: translate(5px, -5px) rotate(0.1deg); }
@@ -601,7 +589,14 @@ p {
   100% { transform: translate(0px, 0px) rotate(0deg); }
 }
 
+/* Desktop zoom + rotate */
+@keyframes zoomRotate {
+  0%   { transform: scale(1) rotate(0deg); }
+  50%  { transform: scale(1.02) rotate(0.1deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
 
+/* Background pulse */
 .space-conquest-app::before {
   content: '';
   position: absolute;
@@ -616,21 +611,4 @@ p {
 @keyframes bgPulse {
   0%, 100% { opacity: 0.7; }
   50% { opacity: 1; }
-}
-
-
-.space-conquest-app {
-  animation: zoomRotate 60s linear infinite;
-}
-
-@keyframes zoomRotate {
-  0%   { transform: scale(1) rotate(0deg); }
-  50%  { transform: scale(1.02) rotate(0.1deg); }
-  100% { transform: scale(1) rotate(0deg); }
-}
-
-
-.space-conquest-app {
-  animation: floatApp 15s ease-in-out infinite alternate,
-             zoomRotate 60s linear infinite;
 }
