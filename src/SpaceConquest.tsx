@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Camera, Rocket, Users, Globe, Satellite, Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import './SpaceConquest.css';
 
 interface SlideData {
@@ -43,76 +43,45 @@ const ShootingStar: React.FC<{ delay: number }> = ({ delay }) => (
   />
 );
 
-const TimelineItem: React.FC<{ year: string; children: React.ReactNode; delay?: number }> = ({ 
-  year, 
-  children, 
-  delay = 0 
-}) => (
-  <div 
-    className="timeline-item"
-    style={{ animationDelay: `${delay}s` }}
-  >
-    <div className="timeline-year">{year}</div>
-    <div className="timeline-content">{children}</div>
-  </div>
-);
+const SpaceConquest: React.FC = () => {
+  const [currentSlide, setCurrentSlide] = useState<number>(0);
+  const [stars, setStars] = useState<StarProps[]>([]);
+  const [shootingStars, setShootingStars] = useState<number[]>([]);
 
-const Card: React.FC<{ 
-  title: string; 
-  icon?: React.ReactNode; 
-  children: React.ReactNode;
-  delay?: number;
-}> = ({ title, icon, children, delay = 0 }) => (
-  <div 
-    className="card"
-    style={{ animationDelay: `${delay}s` }}
-  >
-    {icon && <div className="card-icon">{icon}</div>}
-    <h3 className="card-title">{title}</h3>
-    <div className="card-content">{children}</div>
-  </div>
-);
+  useEffect(() => {
+    const generatedStars: StarProps[] = Array.from({ length: 180 }, () => ({
+      left: Math.random() * 100,
+      top: Math.random() * 100,
+      delay: Math.random() * 4,
+      duration: Math.random() * 4 + 3,
+      size: Math.random() * 2 + 1,
+    }));
+    setStars(generatedStars);
 
-    const SpaceConquest: React.FC = () => {
-    const [currentSlide, setCurrentSlide] = useState<number>(0);
-    const [stars, setStars] = useState<StarProps[]>([]);
-    const [shootingStars, setShootingStars] = useState<number[]>([]);
+    const generatedShootingStars = Array.from({ length: 4 }, (_, i) => i * 3.5);
+    setShootingStars(generatedShootingStars);
+  }, []);
 
-    useEffect(() => {
-        const generatedStars: StarProps[] = Array.from({ length: 200 }, () => ({
-        left: Math.random() * 100,
-        top: Math.random() * 100,
-        delay: Math.random() * 3,
-        duration: Math.random() * 3 + 2,
-        size: Math.random() * 2 + 1,
-        }));
-        setStars(generatedStars);
-
-        const generatedShootingStars = Array.from({ length: 5 }, (_, i) => i * 2);
-        setShootingStars(generatedShootingStars);
-    }, []);
-
-    useEffect(() => {
-        const handleKeyDown = (e: KeyboardEvent) => {
-        if (e.key === 'ArrowRight') nextSlide();
-        if (e.key === 'ArrowLeft') prevSlide();
-        };
-        window.addEventListener('keydown', handleKeyDown);
-        return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [currentSlide]);
-
-    const nextSlide = () => {
-        setCurrentSlide((prev) => (prev + 1) % slides.length);
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowRight') nextSlide();
+      if (e.key === 'ArrowLeft') prevSlide();
     };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [currentSlide]);
 
-    const prevSlide = () => {
-        setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-    };
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
 
-    const goToSlide = (index: number) => {
-        setCurrentSlide(index);
-    };
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
 
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+  };
 
     const slides: SlideData[] = [
   {
@@ -203,13 +172,7 @@ const Card: React.FC<{
     ],
   },
 ];
-
-
-
-
-
-
-  return (
+return (
     <div className="space-conquest-app">
       <div className="stars-background">
         {stars.map((star, index) => (
