@@ -517,21 +517,18 @@ p {
 @media (max-width: 768px) {
 
   .space-conquest-app {
-    animation: floatApp 15s ease-in-out infinite alternate; /* uniquement floatApp sur mobile */
-    transform: none !important; /* évite les glitchs de zoomRotate */
-  }
-
-  .slides-container {
-    padding: 0 10px;
-  }
-
-  .slide {
-    padding: 60px 15px; /* réduit padding pour mobile */
+    /* seulement floatApp sur mobile pour éviter glitch */
+    animation: floatApp 15s ease-in-out infinite alternate !important;
+    transform: none !important; /* neutralise zoomRotate */
   }
 
   .slide-content {
     padding: 20px 15px;
     border-radius: 20px;
+  }
+
+  .slide {
+    padding: 60px 15px;
   }
 
   .planet-1, .planet-2 {
@@ -540,29 +537,11 @@ p {
     opacity: 0.3;
   }
 
-  .top-nav, .bottom-nav {
-    gap: 10px;
-    padding: 5px 10px;
-  }
-
-  .nav-button, .nav-button-large {
-    padding: 6px 10px;
-    font-size: 0.8rem;
-  }
-
-  .slide-title {
-    font-size: 1.8rem !important;
-  }
-
-  .slide-subtitle {
-    font-size: 1.2rem !important;
-  }
-
-  p {
-    font-size: 0.95rem !important;
-    line-height: 1.5;
-  }
+  .slide-title { font-size: 1.8rem !important; }
+  .slide-subtitle { font-size: 1.2rem !important; }
+  p { font-size: 0.95rem !important; line-height: 1.5; }
 }
+
 
 .space-conquest-app {
   min-height: 100vh;
