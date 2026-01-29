@@ -524,64 +524,61 @@ p {
   text-align: center;
 }
 
-/* Responsive */
+/* === Fix mobile glitch === */
 @media (max-width: 768px) {
+
+  .space-conquest-app {
+    animation: floatApp 15s ease-in-out infinite alternate; /* uniquement floatApp sur mobile */
+    transform: none !important; /* évite les glitchs de zoomRotate */
+  }
+
+  .slides-container {
+    padding: 0 10px;
+  }
+
   .slide {
-    padding: 80px 20px;
+    padding: 60px 15px; /* réduit padding pour mobile */
   }
 
   .slide-content {
-    padding: 30px 20px;
+    padding: 20px 15px;
+    border-radius: 20px;
   }
 
-  .slide-title {
-    font-size: 2rem;
+  .planet-1, .planet-2 {
+    width: 80px !important;
+    height: 80px !important;
+    opacity: 0.3;
   }
 
-  .slide-subtitle {
-    font-size: 1.3rem;
+  .top-nav, .bottom-nav {
+    gap: 10px;
+    padding: 5px 10px;
   }
 
-  .section-title {
-    font-size: 1.5rem;
-  }
-
-  p, .intro-text {
-    font-size: 1rem;
-  }
-
-  .cards-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .top-nav {
-    top: 10px;
-    right: 10px;
-  }
-
-  .nav-button {
-    padding: 8px 12px;
+  .nav-button, .nav-button-large {
+    padding: 6px 10px;
     font-size: 0.8rem;
   }
 
-  .slide-indicators {
-    right: 10px;
+  .slide-title {
+    font-size: 1.8rem !important;
   }
 
-  .bottom-nav {
-    bottom: 15px;
-    padding: 10px 20px;
-    gap: 15px;
+  .slide-subtitle {
+    font-size: 1.2rem !important;
   }
 
-  .nav-button-large {
-    padding: 10px 20px;
-    font-size: 0.9rem;
+  p {
+    font-size: 0.95rem !important;
+    line-height: 1.5;
   }
+}
 
-  .nav-button-large span {
-    display: none;
-  }
+/* amélioration perf mobile */
+.space-conquest-app, .slides-container, .slide, .planet {
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 
