@@ -516,85 +516,87 @@ p {
 
 @media (max-width: 768px) {
 
-  /* ────────────────────────────────────────────────
-     Désactive TOUTES les animations et transitions sur le contenu
-  ───────────────────────────────────────────────── */
-
-  /* Arrête toutes les animations existantes */
-  .slide,
-  .slide-content,
-  .slide-title,
-  .slide-subtitle,
-  .slide-icon,
-  .main-icon,
-  .secondary-icon,
-  .astronaut-icon svg,
-  .conclusion-icon svg,
-  .content-wrapper,
-  .timeline-item,
-  .card,
-  p, h1, h2, h3, h4, h5, h6,
-  .quote, .main-quote, .highlight-text,
-  .final-message, .conclusion-paragraph,
-  .section-title, .timeline-year, .card-title {
+  /* 1. Stop total des animations globales et sur .space-conquest-app */
+  .space-conquest-app,
+  .space-conquest-app *,
+  .space-conquest-app *::before,
+  .space-conquest-app *::after {
     animation: none !important;
     transition: none !important;
+    transform: none !important;
   }
 
-  /* Neutralise les effets de hover sur mobile */
-  .nav-button:hover,
-  .nav-button-large:hover,
+  /* 2. Écrase explicitement les animations les plus visibles / gênantes */
+  .star,
+  .shooting-star,
+  .planet-1,
+  .planet-2,
+  .planet {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  /* 3. Désactive l'entrée de slide (slideIn) qui peut sembler saccadée */
+  .slide {
+    animation: none !important;
+    opacity: 1 !important;           /* on force visible immédiatement */
+    transform: none !important;
+  }
+
+  /* 4. Les composants React qui ont des animation-delay inline */
+  .timeline-item,
+  .card,
+  .slide-icon,
+  .astronaut-icon svg,
+  .conclusion-icon svg,
+  .content-wrapper {
+    animation: none !important;
+    opacity: 1 !important;           /* évite qu'ils restent invisibles */
+  }
+
+  /* 5. Neutralise tous les :hover / :active qui changent transform */
+  [class*="nav-button"]:hover,
+  [class*="nav-button"]:active,
   .indicator-dot:hover,
   .card:hover,
-  .timeline-item:hover,
-  .nav-button:active,
-  .nav-button-large:active {
+  .timeline-item:hover {
     transform: none !important;
     box-shadow: none !important;
-    background: inherit !important;     /* ou garde la couleur de base si tu préfères */
+    background: inherit !important;
     border-color: inherit !important;
+    scale: 1 !important;
   }
 
-  /* Option : si tu veux aussi arrêter les planètes et étoiles sur mobile */
-  /* .planet-1, .planet-2, .star, .shooting-star {
-    animation: none !important;
-  } */
-
-  /* Garde ou ajuste uniquement ce qui concerne la mise en page */
-  .space-conquest-app {
-    animation: none !important;           /* ← important : stoppe floatApp & zoomRotate */
-    transform: none !important;
+  /* Ajustements visuels / confort mobile (optionnel mais conseillé) */
+  .stars-background {
+    opacity: 0.6;                    /* réduit la sensation de scintillement */
   }
 
   .slide-content {
-    padding: 30px 20px;
+    padding: 32px 20px;
     border-radius: 20px;
+    background: rgba(15, 23, 42, 0.75); /* un peu plus opaque → moins de distraction */
   }
 
   .slide {
-    padding: 80px 20px 120px;
+    padding: 90px 16px 140px;
+    align-items: flex-start;         /* mieux pour le scroll si contenu long */
   }
 
-  .planet-1, .planet-2 {
-    width: 80px !important;
-    height: 80px !important;
-    opacity: 0.3;
-    /* animation: none !important;   ← décommente si tu veux stopper les planètes */
-  }
+  .slide-title    { font-size: 2.1rem !important; line-height: 1.15; }
+  .slide-subtitle { font-size: 1.45rem !important; }
+  p               { font-size: 1.02rem !important; line-height: 1.65; }
 
-  .slide-title    { font-size: 2rem !important; }
-  .slide-subtitle { font-size: 1.4rem !important; }
-  p               { font-size: 1rem !important; line-height: 1.6; }
-
-  .cards-grid {
+  .bottom-nav {
+    padding: 12px 24px;
     gap: 20px;
   }
 
-  .card {
-    padding: 24px 20px;
+  .nav-button-large {
+    padding: 10px 20px;
+    font-size: 0.95rem;
   }
 }
-
 
 .space-conquest-app {
   min-height: 100vh;
