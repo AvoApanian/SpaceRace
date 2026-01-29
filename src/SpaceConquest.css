@@ -514,207 +514,230 @@ p {
   text-align: center;
 }
 
-/* ==============================================
-   RESPONSIVE MOBILE
-   ============================================== */
+/* ============================================================
+   RESPONSIVE MOBILE - DÉSACTIVATION COMPLÈTE DES ANIMATIONS
+   ============================================================ */
 
 @media (max-width: 768px) {
-  /* Désactiver toutes les animations sur mobile */
+  
+  /* ARRÊT BRUTAL DE TOUTES LES ANIMATIONS */
+  * {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+    transition-duration: 0s !important;
+  }
+
+  /* Étoiles et fond */
   .star,
-  .shooting-star,
+  .shooting-star {
+    display: none !important;
+  }
+
   .planet,
   .planet-1,
   .planet-2 {
-    animation: none !important;
-    opacity: 0.2 !important;
+    opacity: 0.15 !important;
+    transform: none !important;
   }
 
   .stars-background {
-    opacity: 0.5;
+    opacity: 0.4;
   }
 
-  /* Désactiver animations de slide */
+  /* Slides */
   .slide {
-    animation: none !important;
-    padding: 90px 16px 140px;
+    padding: 80px 16px 130px;
     align-items: flex-start;
   }
 
   .slide-content {
-    padding: 32px 20px;
-    border-radius: 20px;
-    background: rgba(15, 23, 42, 0.78);
+    padding: 28px 18px;
+    border-radius: 18px;
+    background: rgba(15, 23, 42, 0.85);
   }
 
-  /* Désactiver animations d'icônes */
-  .slide-icon,
-  .main-icon,
-  .secondary-icon,
-  .astronaut-icon svg,
-  .conclusion-icon svg {
-    animation: none !important;
-  }
-
-  /* Désactiver animations de timeline et cards */
-  .timeline-item,
-  .card {
-    animation: none !important;
-  }
-
-  .content-wrapper {
-    animation: none !important;
-  }
-
-  /* Tailles de texte */
+  /* Textes */
   .slide-title {
-    font-size: 2.1rem !important;
-    line-height: 1.18;
+    font-size: 2rem !important;
+    line-height: 1.15;
+    margin-bottom: 16px;
   }
 
   .slide-subtitle {
-    font-size: 1.45rem !important;
+    font-size: 1.4rem !important;
+    margin-bottom: 28px;
   }
 
   p {
-    font-size: 1.02rem !important;
-    line-height: 1.65;
+    font-size: 1rem !important;
+    line-height: 1.6;
+    margin-bottom: 16px;
   }
 
   .section-title {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+    margin: 24px 0 16px;
   }
 
   .timeline-year {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
   }
 
   .intro-text {
-    font-size: 1.1rem;
+    font-size: 1.08rem;
+    margin-bottom: 32px;
   }
 
   .main-quote {
-    font-size: 1.1rem;
-  }
-
-  .final-message,
-  .conclusion-paragraph {
-    font-size: 1.05rem;
-  }
-
-  /* Navigation */
-  .top-nav {
-    top: 14px;
-    right: 14px;
-    gap: 10px;
-  }
-
-  .nav-button {
-    padding: 8px 14px;
-    font-size: 0.85rem;
-  }
-
-  .bottom-nav {
-    bottom: 16px;
-    padding: 12px 20px;
-    gap: 16px;
-  }
-
-  .nav-button-large {
-    padding: 10px 18px;
-    font-size: 0.9rem;
-  }
-
-  .slide-counter {
-    font-size: 0.95rem;
-    min-width: 50px;
-  }
-
-  /* Désactiver tous les effets hover sur mobile */
-  .nav-button:hover,
-  .nav-button:active,
-  .nav-button-large:hover,
-  .nav-button-large:active,
-  .indicator-dot:hover,
-  .card:hover,
-  .timeline-item:hover {
-    transform: none !important;
-    box-shadow: none !important;
-    background: initial !important;
-  }
-
-  /* Indicateurs de slides plus petits */
-  .slide-indicators {
-    right: 16px;
-    gap: 10px;
-  }
-
-  .indicator-dot {
-    width: 8px;
-    height: 8px;
-  }
-
-  .indicator-dot.active {
-    transform: scale(1.3);
-  }
-
-  /* Cards responsive */
-  .cards-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .card {
-    padding: 24px;
-  }
-
-  .card-title {
-    font-size: 1.2rem;
-  }
-
-  /* Timeline responsive */
-  .timeline-item {
+    font-size: 1.08rem;
     padding: 20px;
     margin: 20px 0;
   }
 
-  /* Planètes plus petites sur mobile */
-  .planet-1 {
-    width: 80px;
-    height: 80px;
+  .final-message {
+    font-size: 1.05rem;
+    padding: 20px;
+    margin: 24px 0;
   }
 
-  .planet-2 {
-    width: 120px;
-    height: 120px;
-  }
-}
-
-/* Pour les très petits écrans */
-@media (max-width: 480px) {
-  .slide-title {
-    font-size: 1.8rem !important;
+  .conclusion-paragraph {
+    font-size: 1.05rem;
+    padding: 18px;
+    margin-top: 24px;
   }
 
-  .slide-subtitle {
-    font-size: 1.25rem !important;
-  }
-
-  .slide-content {
-    padding: 24px 16px;
+  /* Navigation */
+  .top-nav {
+    top: 12px;
+    right: 12px;
+    gap: 8px;
   }
 
   .nav-button {
-    padding: 7px 12px;
-    font-size: 0.8rem;
-  }
-
-  .nav-button-large {
-    padding: 9px 16px;
-    font-size: 0.85rem;
+    padding: 8px 13px;
+    font-size: 0.82rem;
   }
 
   .bottom-nav {
-    padding: 10px 16px;
+    bottom: 14px;
+    padding: 11px 18px;
+    gap: 14px;
+  }
+
+  .nav-button-large {
+    padding: 9px 17px;
+    font-size: 0.88rem;
+  }
+
+  .slide-counter {
+    font-size: 0.92rem;
+    min-width: 48px;
+  }
+
+  /* Indicateurs */
+  .slide-indicators {
+    right: 14px;
+    gap: 9px;
+  }
+
+  .indicator-dot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .indicator-dot.active {
+    width: 9px;
+    height: 9px;
+  }
+
+  /* Cards */
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin: 24px 0;
+  }
+
+  .card {
+    padding: 22px;
+  }
+
+  .card-title {
+    font-size: 1.18rem;
+    margin-bottom: 12px;
+  }
+
+  .card-icon {
+    margin-bottom: 12px;
+  }
+
+  /* Timeline */
+  .timeline {
+    margin: 24px 0;
+  }
+
+  .timeline-item {
+    padding: 18px;
+    margin: 18px 0;
+  }
+
+  .timeline-year {
+    margin-bottom: 10px;
+  }
+
+  /* Planètes mobiles */
+  .planet-1 {
+    width: 70px;
+    height: 70px;
+  }
+
+  .planet-2 {
+    width: 110px;
+    height: 110px;
+  }
+
+  /* Quote */
+  .quote {
+    padding: 12px 16px;
+    margin: 12px 0;
+  }
+
+  /* Highlight */
+  .highlight-text {
+    padding: 16px;
+    margin: 20px 0;
+  }
+}
+
+/* Très petits écrans */
+@media (max-width: 480px) {
+  .slide-title {
+    font-size: 1.75rem !important;
+  }
+
+  .slide-subtitle {
+    font-size: 1.2rem !important;
+  }
+
+  .slide-content {
+    padding: 22px 14px;
+  }
+
+  .nav-button {
+    padding: 7px 11px;
+    font-size: 0.78rem;
+  }
+
+  .nav-button-large {
+    padding: 8px 15px;
+    font-size: 0.84rem;
+  }
+
+  .bottom-nav {
+    padding: 10px 15px;
     gap: 12px;
+  }
+
+  .slide {
+    padding: 75px 12px 125px;
   }
 }
