@@ -514,22 +514,13 @@ p {
   text-align: center;
 }
 
-/* Version "zéro animation, zéro scintillement" */
+
 @media (max-width: 768px) {
-  .stars-background,
-  .star,
-  .shooting-star,
-  .planet,
-  .planet-1,
-  .planet-2 {
-    display: none !important;     /* carrément supprimer le fond animé */
+  .slide {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
   }
-
-  .space-conquest-app::before {
-    display: none !important;
-  }
-
-  /* le reste comme ci-dessus... */
 }
 
 .space-conquest-app {
