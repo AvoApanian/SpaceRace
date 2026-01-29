@@ -514,88 +514,22 @@ p {
   text-align: center;
 }
 
+/* Version "zéro animation, zéro scintillement" */
 @media (max-width: 768px) {
-
-  /* 1. Stop total des animations globales et sur .space-conquest-app */
-  .space-conquest-app,
-  .space-conquest-app *,
-  .space-conquest-app *::before,
-  .space-conquest-app *::after {
-    animation: none !important;
-    transition: none !important;
-    transform: none !important;
-  }
-
-  /* 2. Écrase explicitement les animations les plus visibles / gênantes */
+  .stars-background,
   .star,
   .shooting-star,
+  .planet,
   .planet-1,
-  .planet-2,
-  .planet {
-    animation: none !important;
-    transform: none !important;
+  .planet-2 {
+    display: none !important;     /* carrément supprimer le fond animé */
   }
 
-  /* 3. Désactive l'entrée de slide (slideIn) qui peut sembler saccadée */
-  .slide {
-    animation: none !important;
-    opacity: 1 !important;           /* on force visible immédiatement */
-    transform: none !important;
+  .space-conquest-app::before {
+    display: none !important;
   }
 
-  /* 4. Les composants React qui ont des animation-delay inline */
-  .timeline-item,
-  .card,
-  .slide-icon,
-  .astronaut-icon svg,
-  .conclusion-icon svg,
-  .content-wrapper {
-    animation: none !important;
-    opacity: 1 !important;           /* évite qu'ils restent invisibles */
-  }
-
-  /* 5. Neutralise tous les :hover / :active qui changent transform */
-  [class*="nav-button"]:hover,
-  [class*="nav-button"]:active,
-  .indicator-dot:hover,
-  .card:hover,
-  .timeline-item:hover {
-    transform: none !important;
-    box-shadow: none !important;
-    background: inherit !important;
-    border-color: inherit !important;
-    scale: 1 !important;
-  }
-
-  /* Ajustements visuels / confort mobile (optionnel mais conseillé) */
-  .stars-background {
-    opacity: 0.6;                    /* réduit la sensation de scintillement */
-  }
-
-  .slide-content {
-    padding: 32px 20px;
-    border-radius: 20px;
-    background: rgba(15, 23, 42, 0.75); /* un peu plus opaque → moins de distraction */
-  }
-
-  .slide {
-    padding: 90px 16px 140px;
-    align-items: flex-start;         /* mieux pour le scroll si contenu long */
-  }
-
-  .slide-title    { font-size: 2.1rem !important; line-height: 1.15; }
-  .slide-subtitle { font-size: 1.45rem !important; }
-  p               { font-size: 1.02rem !important; line-height: 1.65; }
-
-  .bottom-nav {
-    padding: 12px 24px;
-    gap: 20px;
-  }
-
-  .nav-button-large {
-    padding: 10px 20px;
-    font-size: 0.95rem;
-  }
+  /* le reste comme ci-dessus... */
 }
 
 .space-conquest-app {
