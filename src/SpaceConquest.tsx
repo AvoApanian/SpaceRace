@@ -139,7 +139,7 @@ const Card: React.FC<{
     title: 'I. Les débuts de la conquête spatiale',
     content: (
       <p>
-        À l’origine, la conquête spatiale repose sur les progrès réalisés pendant la Seconde Guerre mondiale, en particulier les missiles V2 allemands, dont les technologies sont récupérées et améliorées par les États‑Unis et l’URSS après 1945. Ces fusées, d’abord pensées comme des armes, servent ensuite de base au développement des premiers lanceurs capables d’envoyer des engins au‑delà de l’atmosphère terrestre. Dès 1949, les États-Unis testent leurs fusées en envoyant dans l’espace le singe Albert ll, premier animal américain à franchir la limite de l’atmosphère. Cet essai marque une étape dans la compréhension des effets du vol spatial sur les êtres vivants. 
+        À l’origine, la conquête spatiale repose sur les progrès réalisés pendant la Seconde Guerre mondiale, en particulier les missiles V2 allemands, dont les technologies sont récupérées et améliorées par les États‑Unis et l’URSS après 1945. Ces fusées, d’abord pensées comme des armes, servent ensuite de base au développement des premiers lanceurs capables d’envoyer des engins au‑delà de l’atmosphère terrestre. Dès 1949, les États-Unis testent leurs fusées en envoyant dans l’espace le singe Albert II, premier animal américain à franchir la limite de l’atmosphère. Cet essai marque une étape dans la compréhension des effets du vol spatial sur les êtres vivants. 
 
         Le véritable tournant survient le 4 octobre 1957, lorsque l’Union soviétique lance Spoutnik‑1, le premier satellite artificiel de l’histoire. Ce petit objet, mis en orbite autour de la Terre, prouve que l’URSS maîtrise des fusées suffisamment puissantes pour atteindre l’espace, ce qui suscite un choc et une grande inquiétude aux États‑Unis, sur le plan militaire comme symbolique. Quelques semaines plus tard, l’URSS envoie à bord de Spoutnik-2 la chienne Laïka, premier être vivant placé en orbite autour de la Terre, marquant une étape scientifique et un puissant succès de propagande.  
 
@@ -154,7 +154,7 @@ const Card: React.FC<{
       <p>
         Dans un premier temps, l’URSS conserve une avance nette dans cette course à l’espace. Le 12 avril 1961, elle envoie le cosmonaute Youri Gagarine à bord de la capsule Vostok 1, faisant de lui le premier homme à voyager dans l’espace et à effectuer une orbite complète autour de la Terre. Cet exploit est utilisé par les autorités soviétiques comme une démonstration spectaculaire de la supériorité de leur système politique et de leurs capacités scientifiques. 
 
-        Les Soviétiques enchaînent ensuite plusieurs « premières » : ils envoient notamment les premières sondes Luna vers la Lune et réalisent les premiers vols avec plusieurs cosmonautes à bord, ainsi que le premier vol d’une femme dans l’espace avec Valentina Terechkova en 1963. Ces succès renforcent l’image d’une URSS en avance sur son rival américain, à un moment où la compétition idéologique est particulièrement forte. 
+        Les Soviétiques enchaînent ensuite plusieurs « premières » : ils envoient notamment les premières sondes Luna vers la Lune et réalisent les premiers vols avec plusieurs cosmonautes à bord, ainsi que le premier vol d’une femme dans l’espace avec Valentina Terechkova en 1963. Ces succès renforcent l’image d’une URSS en avance sur son rival américain, à un moment où la compétition idéologique est particulièrement forte.
 
         Face à cette série de succès soviétiques, les États‑Unis réagissent en se fixant un objectif encore plus ambitieux. En 1961, le président John F. Kennedy annonce la volonté d’envoyer un Américain sur la Lune avant la fin des années 1960, afin de reprendre l’avantage dans la course à l’espace et de frapper l’opinion mondiale par un exploit sans précédent. Cet objectif donne naissance au programme Apollo, qui mobilise des moyens financiers, techniques et humains considérables pour atteindre la Lune. 
 
@@ -178,8 +178,6 @@ const Card: React.FC<{
         Un moment symbolique de cette évolution est la mission Apollo‑Soyouz de 1975. Lors de cette mission, un vaisseau américain Apollo et un vaisseau soviétique Soyouz s’amarrent en orbite et les astronautes des deux pays échangent une poignée de main historique dans l’espace. Cette rencontre est largement médiatisée comme un signe de détente et de volonté de coopération entre les deux anciennes rivales. 
 
         À partir de la fin de la guerre froide, l’espace devient de plus en plus un domaine de collaboration internationale. De nouvelles puissances, comme l’Europe avec l’Agence spatiale européenne, la Chine ou encore l’Inde, développent leurs propres programmes spatiaux et participent à des projets communs. La Station spatiale internationale, qui associe notamment les États‑Unis, la Russie et plusieurs autres partenaires, illustre cette nouvelle phase d’une conquête spatiale davantage tournée vers la coopération scientifique, l’observation de la Terre et l’exploration lointaine. 
-
-        La conquête de l’espace reste toutefois un enjeu de puissance pour les États, mais elle s’ouvre aussi à des acteurs privés et à des objectifs plus variés, comme les télécommunications, la navigation par satellite ou l’étude du climat. L’espace demeure donc à la fois un lieu de rivalités et un champ d’expérimentation pour de nouvelles formes de collaboration mondiale. 
       </p>
     ),
   },
@@ -195,6 +193,7 @@ const Card: React.FC<{
     ),
   },
 ];
+
 
 
 
