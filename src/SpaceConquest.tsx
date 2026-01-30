@@ -86,9 +86,9 @@ const SpaceConquest: React.FC = () => {
 const slides: SlideData[] = [
   {
     id: 0,
-    title: 'EXPOSÉ HISTOIRE',
-    subtitle: 'La conquête spatiale durant la guerre froide',
-    content: <p>EXPOSÉ HISTOIRE - La conquête spatiale durant la guerre froide</p>,
+    title: 'La conquête spatiale durant la guerre froide',
+    subtitle: '',
+    content: <p></p>,
   },
   {
     id: 1,
